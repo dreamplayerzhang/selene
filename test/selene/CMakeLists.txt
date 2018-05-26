@@ -41,6 +41,13 @@ target_compile_options(selene_tests PRIVATE
 target_compile_definitions(selene_tests PRIVATE
         ${SELENE_COMPILER_DEFINITIONS})
 
+target_compile_features(selene_tests PRIVATE
+        cxx_std_14)
+
+set_target_properties(selene_tests PROPERTIES
+        CXX_STANDARD_REQUIRED YES
+        CXX_EXTENSIONS NO)
+
 target_include_directories(selene_tests PRIVATE
         ${SELENE_DIR}
         ${SELENE_DIR}/external/Catch2/single_include)

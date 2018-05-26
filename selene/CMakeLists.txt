@@ -23,6 +23,10 @@ target_compile_options(selene_base PRIVATE ${SELENE_COMPILER_OPTIONS})
 
 target_compile_definitions(selene_base PRIVATE ${SELENE_COMPILER_DEFINITIONS})
 
+target_compile_features(selene_base PUBLIC cxx_std_14)
+
+set_target_properties(selene_base PROPERTIES CXX_STANDARD_REQUIRED YES CXX_EXTENSIONS NO)
+
 target_include_directories(selene_base PUBLIC
         $<BUILD_INTERFACE:${SELENE_DIR}>
         $<INSTALL_INTERFACE:include>)
@@ -78,6 +82,10 @@ target_compile_options(selene_img PRIVATE ${SELENE_COMPILER_OPTIONS} ${SELENE_IM
 
 target_compile_definitions(selene_img PRIVATE ${SELENE_COMPILER_DEFINITIONS})
 
+target_compile_features(selene_img PUBLIC cxx_std_14)
+
+set_target_properties(selene_img PROPERTIES CXX_STANDARD_REQUIRED YES CXX_EXTENSIONS NO)
+
 target_include_directories(selene_img PUBLIC
         $<BUILD_INTERFACE:${SELENE_DIR}>
         $<INSTALL_INTERFACE:include>)
@@ -126,6 +134,10 @@ add_library(selene::selene_io ALIAS selene_io)
 target_compile_options(selene_io PRIVATE ${SELENE_COMPILER_OPTIONS})
 
 target_compile_definitions(selene_io PRIVATE ${SELENE_COMPILER_DEFINITIONS})
+
+target_compile_features(selene_io PUBLIC cxx_std_14)
+
+set_target_properties(selene_io PROPERTIES CXX_STANDARD_REQUIRED YES CXX_EXTENSIONS NO)
 
 target_include_directories(selene_io PUBLIC
         $<BUILD_INTERFACE:${SELENE_DIR}>

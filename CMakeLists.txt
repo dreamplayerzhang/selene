@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.8)
 project(selene VERSION 0.1.1 LANGUAGES CXX)
 
 option(SELENE_BUILD_TESTS "Build Selene tests" OFF)
@@ -11,11 +11,6 @@ if (SELENE_BUILD_ALL)
     set(SELENE_BUILD_EXAMPLES ON)
     set(SELENE_BUILD_BENCHMARKS ON)
 endif()
-
-# https://cmake.org/cmake/help/latest/prop_tgt/CXX_STANDARD.html
-set(CMAKE_CXX_STANDARD 14 CACHE STRING "The C++ standard whose features are requested to build this target.")
-set(CMAKE_CXX_STANDARD_REQUIRED ON CACHE BOOL "Boolean describing whether the value of CXX_STANDARD is a requirement.")
-set(CMAKE_CXX_EXTENSIONS OFF CACHE BOOL "Boolean specifying whether compiler specific extensions are requested.")
 
 # Generate compilation database (e.g. for cquery or YouCompleteMe)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
